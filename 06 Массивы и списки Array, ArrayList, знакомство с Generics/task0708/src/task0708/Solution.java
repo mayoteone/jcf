@@ -21,6 +21,24 @@ public class Solution {
     private static ArrayList<String> strings;
 
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        strings = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        for (int i = 0; i < 5; i++) {
+            strings.add(reader.readLine());
+        }
+
+        int index = 0;
+        for (int i = 1; i < strings.size(); i++) {
+            if (strings.get(i).length() > strings.get(index).length()) {
+                index = i;
+            }
+        }
+
+        for (String string : strings) {
+            if (strings.get(index).length() == string.length()) {
+                System.out.println(string);
+            }
+        }
     }
 }

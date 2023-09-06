@@ -43,13 +43,27 @@ public class Solution {
         }
 
         ArrayList<String> resultStrings = new ArrayList<String>();
-        for (int i = 0; i < strings.size(); i++) {
-            String string = strings.get(i);
-            resultStrings.add(string.toUpperCase());
+        for (String string : strings) {
+            if (string.length() % 2 == 0) {
+                resultStrings.add(string);
+                resultStrings.add(string);
+            } else {
+                resultStrings.add(string);
+                resultStrings.add(string);
+                resultStrings.add(string);
+            }
         }
+        String control = resultStrings.get(0);
 
         for (int i = 0; i < resultStrings.size(); i++) {
-            System.out.println(resultStrings.get(i));
+            if (control.equals(resultStrings.get(i))) {
+                System.out.print(resultStrings.get(i) + " ");
+            } else {
+                System.out.println();
+                control = resultStrings.get(i);
+                System.out.print(control + " ");
+            }
+
         }
     }
 }

@@ -24,11 +24,43 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) {
-        // напишите тут ваш код
+        Human olga = new Human("Olga", false, 73);
+        Human elena = new Human("Elena", false, 63);
+        Human pavel = new Human("Pavel", true, 75);
+        Human gleb = new Human("Gleb", true, 71);
+        Human vlad = new Human("Vlad", true, 48, gleb, olga);
+        Human julia = new Human("Julia", false, 43, pavel, elena);
+        Human mark = new Human("Mark", true, 17, vlad, julia);
+        Human polina = new Human("Polina", false, 15, vlad, julia);
+        Human robert = new Human("Robert", true, 23, vlad, julia);
+
+        System.out.println(olga + "\n" + elena + "\n" + pavel + "\n" + gleb +
+                "\n" + vlad + "\n" + julia + "\n" + mark + "\n" + polina + "\n" + robert);
+
+
+
     }
 
     public static class Human {
-        // напишите тут ваш код
+        String name;
+        boolean sex;
+        int age;
+        Human father;
+        Human mother;
+
+        public Human(String name, boolean sex, int age){
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+        }
+
+        public Human(String name, boolean sex, int age, Human father, Human mother){
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+            this.father = father;
+            this.mother = mother;
+        }
 
         public String toString() {
             String text = "";

@@ -23,6 +23,23 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        //напишите тут ваш код
+        ArrayList<String> list = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        for (int i = 0; i < 10; i++) {
+            list.add(reader.readLine());
+        }
+
+        int indexMin = 0;
+        int indexMax = 0;
+        for (int i = 1; i < list.size(); i++) {
+            if (list.get(i).length() < list.get(indexMin).length()) {
+                indexMin = i;
+            }
+            if (list.get(i).length() > list.get(indexMax).length()) {
+                indexMax = i;
+            }
+        }
+        System.out.println(indexMax < indexMin ? list.get(indexMax) : list.get(indexMin));
     }
 }

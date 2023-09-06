@@ -3,6 +3,7 @@ package task0706;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /* 
 1. Создать массив на 15 целых чисел.
@@ -24,6 +25,24 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        //напишите тут ваш код
+        int[] array = new int[15];
+        Scanner console = new Scanner(System.in);
+        int even = 0;
+        int odd = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = console.nextInt();
+            if (i % 2 == 0) {
+                even += array[i];
+            } else {
+                odd += array[i];
+            }
+        }
+
+        if (even > odd) {
+            System.out.println("В домах с четными номерами проживает больше жителей.");
+        } else if (odd > even) {
+            System.out.println("В домах с нечетными номерами проживает больше жителей.");
+        }
     }
 }

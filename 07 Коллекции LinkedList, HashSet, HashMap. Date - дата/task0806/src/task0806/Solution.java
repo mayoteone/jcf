@@ -31,7 +31,9 @@ public class Solution {
         map.put("Hugs", 111111111111L);
         map.put("Comp", (double) 123);
 
-        //напишите тут ваш код
+        for (String key : map.keySet()) {
+            System.out.println(key + " - " + map.get(key));
+        }
 
     }
 }

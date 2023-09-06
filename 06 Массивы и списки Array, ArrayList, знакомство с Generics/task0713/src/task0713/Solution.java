@@ -25,10 +25,39 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        ArrayList<Integer> numbers = new ArrayList<>();
+        ArrayList<Integer> numbersDivide3 = new ArrayList<>();
+        ArrayList<Integer> numbersDivide2 = new ArrayList<>();
+        ArrayList<Integer> numbersOther = new ArrayList<>();
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        for (int i = 0; i < 20; i++) {
+            numbers.add(Integer.parseInt(reader.readLine()));
+        }
+        for (Integer number : numbers) {
+            if (number % 2 == 0) {
+                numbersDivide2.add(number);
+            }
+            if (number % 3 == 0) {
+                numbersDivide3.add(number);
+            }
+            if (number % 2 != 0 && number % 3 != 0) {
+                numbersOther.add(number);
+            }
+        }
+
+        printList(numbersDivide3);
+        printList(numbersDivide2);
+        printList(numbersOther);
+
+
     }
 
     public static void printList(ArrayList<Integer> list) {
-        //напишите тут ваш код
+        for (Integer number : list){
+            System.out.println(number);
+        }
+        System.out.println();
     }
 }

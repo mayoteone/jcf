@@ -30,7 +30,22 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        HashSet<String> list = new HashSet<>() {{
+            add("арбуз");
+            add("банан");
+            add("вишня");
+            add("груша");
+            add("дыня");
+            add("ежевика");
+            add("женьшень");
+            add("земляника");
+            add("ирис");
+            add("картофель");
+        }};
+
+        for (String string : list) {
+            System.out.println(string);
+        }
 
     }
 }

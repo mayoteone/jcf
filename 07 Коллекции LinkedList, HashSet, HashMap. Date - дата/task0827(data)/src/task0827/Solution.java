@@ -1,6 +1,10 @@
 package task0827;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 /* 
 Работа с датой
@@ -25,6 +29,18 @@ public class Solution {
     }
 
     public static boolean isDateOdd(String date) {
-        return true;
+        /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM d yyyy", Locale.ENGLISH);
+        LocalDate localDate = LocalDate.parse(date, formatter);
+        int totalDays = localDate.getDayOfYear();
+        return totalDays % 2 != 0;
+         */
+        Date startYear = new Date(date);
+        startYear.setMonth(0);
+        startYear.setDate(1);
+        Date today = new Date(date);
+        long msDistance = today.getTime() - startYear.getTime();
+        int dayCount = (int) (msDistance / (24 * 60 * 60 * 1000) + 1);
+
+        return dayCount % 2 != 0;
     }
 }

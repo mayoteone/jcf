@@ -44,7 +44,18 @@ public class Solution {
     }
 
     public static ArrayList<String> fix(ArrayList<String> strings) {
-        //напишите тут ваш код
-        return null;
+        ArrayList<String> result = new ArrayList<>();
+
+        for (String string : strings) {
+            if (string.contains("р") && string.contains("л")) {
+                result.add(string);
+            } else if (string.contains("л")) {
+                result.add(string);
+                result.add(string);
+            } else if (!string.contains("р")) {
+                result.add(string);
+            }
+        }
+        return result;
     }
 }

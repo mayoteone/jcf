@@ -2,6 +2,7 @@ package task0728;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 /* 
 В убывающем порядке
@@ -32,6 +33,20 @@ public class Solution {
     }
 
     public static void sort(int[] array) {
-        //напишите тут ваш код
+
+        Arrays.sort(array);
+        for (int i = 0; i < array.length / 2; i++) {
+            int n = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = n;
+        }
+
+        /*
+        int[] arrayCopy = Arrays.copyOf(array, array.length);
+        Arrays.sort(arrayCopy);
+        for (int i = 0; i < arrayCopy.length; i++) {
+            array[i] = arrayCopy[arrayCopy.length - 1 - i];
+        }*/
+
     }
 }

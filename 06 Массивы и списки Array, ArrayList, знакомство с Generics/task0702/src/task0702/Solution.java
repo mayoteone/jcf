@@ -2,6 +2,7 @@ package task0702;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /* 
 Массив из строчек в обратном порядке
@@ -18,6 +19,14 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        String[] array = new String[10];
+        Scanner console = new Scanner(System.in);
+        for (int i = 0; i < 8; i++) {
+            array[i] = console.nextLine();
+        }
+
+        for (int i = array.length; i > 0; i--) {
+            System.out.println(array[i - 1]);
+        }
     }
 }

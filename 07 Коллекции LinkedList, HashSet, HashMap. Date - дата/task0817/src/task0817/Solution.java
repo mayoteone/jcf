@@ -18,13 +18,34 @@ Requirements:
 
 public class Solution {
     public static Map<String, String> createMap() {
-        //напишите тут ваш код
+        Map<String, String> map = new HashMap<>();
+        map.put("Smith", "Emma");
+        map.put("Johnson", "Alice");
+        map.put("Williams", "Michael");
+        map.put("Jones", "Emily");
+        map.put("Brown", "David");
+        map.put("Davis", "Emily");
+        map.put("Miller", "Robert");
+        map.put("Wilson", "Sophia");
+        map.put("Moore", "William");
+        map.put("Taylor", "Emma");
+
+        return map;
+
 
     }
 
     public static void removeTheFirstNameDuplicates(Map<String, String> map) {
-        //напишите тут ваш код
-
+        Map<String, String> mapCopy1 = new HashMap<>(map);
+        Map<String, String> mapCopy2 = new HashMap<>(map);
+        for (var pair1 : mapCopy1.entrySet()) {
+            for (var pair2 : mapCopy2.entrySet()) {
+                if (pair1.getValue().equals(pair2.getValue()) && !pair1.getKey().equals(pair2.getKey())) {
+                    removeItemFromMapByValue(map, map.get(pair1.getKey()));
+                    removeItemFromMapByValue(map, map.get(pair2.getKey()));
+                }
+            }
+        }
     }
 
     public static void removeItemFromMapByValue(Map<String, String> map, String value) {
@@ -37,6 +58,5 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-
     }
 }

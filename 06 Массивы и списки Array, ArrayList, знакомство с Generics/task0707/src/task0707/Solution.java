@@ -19,6 +19,15 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Примитивы");
+        list.add("ООП");
+        list.add("Коллекции");
+        list.add("Исключения");
+        list.add("Мультипоточка");
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
     }
 }

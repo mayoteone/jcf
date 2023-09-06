@@ -19,6 +19,20 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //напишите тут ваш код
+        ArrayList<String> list = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        for (int i = 0; i < 5; i++) {
+            list.add(reader.readLine());
+        }
+
+        int lastIndex = list.size() - 1;
+        for (int i = 0; i < 13; i++) {
+            list.add(0, list.remove(lastIndex));
+        }
+
+        for (String str : list) {
+            System.out.println(str);
+        }
     }
 }

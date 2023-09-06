@@ -3,6 +3,7 @@ package task0701;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /* 
 Массивный максимум
@@ -26,12 +27,22 @@ public class Solution {
     }
 
     public static int[] initializeArray() throws IOException {
-        // создай и заполни массив
-        return null;
+        int[] array = new int[20];
+        Scanner console = new Scanner(System.in);
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = console.nextInt();
+        }
+        return array;
     }
 
     public static int max(int[] array) {
-        // найди максимальное значение
-        return 0;
+        int max = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        return max;
     }
 }

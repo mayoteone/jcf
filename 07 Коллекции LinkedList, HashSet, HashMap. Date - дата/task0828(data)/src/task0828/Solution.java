@@ -3,8 +3,7 @@ package task0828;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /* 
 Номер месяца
@@ -20,6 +19,27 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        //напишите тут ваш код
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String myMonth = reader.readLine();
+        Map<String, Integer> map = new HashMap<>(){{
+            put("January", 1);
+            put("February", 2);
+            put("March", 3);
+            put("April", 4);
+            put("May", 5);
+            put("June", 6);
+            put("July", 7);
+            put("August", 8);
+            put("September", 9);
+            put("October", 10);
+            put("November", 11);
+            put("December", 12);
+        }};
+
+        for (var month: map.entrySet()){
+            if(myMonth.equalsIgnoreCase(month.getKey())){
+                System.out.println(month.getKey() + " is the " + month.getValue() + " month.");
+            }
+        }
     }
 }

@@ -24,12 +24,12 @@ public class Solution {
     }
 
     public static long getInsertTimeInMs(List list) {
-        // напишите тут ваш код
+        long startTime = System.nanoTime();
 
         insert10000(list);
 
-        // напишите тут ваш код
-
+        long endTime = System.nanoTime();
+        return endTime - startTime;
     }
 
     public static void insert10000(List list) {

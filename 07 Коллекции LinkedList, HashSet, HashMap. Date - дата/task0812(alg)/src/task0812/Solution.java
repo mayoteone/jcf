@@ -27,7 +27,28 @@ Requirements:
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        //напишите тут ваш код
+        ArrayList<Integer> list = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        for (int i = 0; i < 10; i++) {
+            list.add(Integer.parseInt(reader.readLine()));
+        }
+
+        int count = 1;
+        int result = 0;
+        for (int i = 1; i < list.size(); i++) {
+            if (list.get(i - 1) == list.get(i)) {
+                count++;
+            }
+            if ((list.get(i - 1) != list.get(i)) || (i == list.size() - 1)) {
+                int countCopy = count;
+                count = 1;
+                if (countCopy > result) {
+                    result = countCopy;
+                }
+            }
+        }
+        System.out.println(result);
 
     }
 }

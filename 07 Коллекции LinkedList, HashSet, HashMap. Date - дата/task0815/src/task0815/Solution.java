@@ -18,17 +18,41 @@ Requirements:
 
 public class Solution {
     public static Map<String, String> createMap() {
-        //напишите тут ваш код
+        Map<String, String> map = new HashMap<>();
+        map.put("Smith", "John");
+        map.put("Johnson", "Alice");
+        map.put("Williams", "Michael");
+        map.put("Jones", "Emily");
+        map.put("Brown", "David");
+        map.put("Davis", "Olivia");
+        map.put("Miller", "Robert");
+        map.put("Wilson", "Sophia");
+        map.put("Moore", "William");
+        map.put("Taylor", "Emma");
+
+        return map;
 
     }
 
     public static int getCountTheSameFirstName(Map<String, String> map, String name) {
-        //напишите тут ваш код
+        int count = 0;
+        for (String str : map.values()) {
+            if (name.equals(str)) {
+                count++;
+            }
+        }
+        return count;
 
     }
 
     public static int getCountTheSameLastName(Map<String, String> map, String lastName) {
-        //напишите тут ваш код
+        int count = 0;
+        for (String str : map.keySet()) {
+            if (lastName.equals(str)) {
+                count++;
+            }
+        }
+        return count;
 
     }
 
